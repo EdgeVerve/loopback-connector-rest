@@ -1,5 +1,5 @@
 {
-  "name": "loopback-connector-sbrest",
+  "name": "loopback-connector-evrest",
   "version": "2.0.0",
   "description": "Loopback REST Connector",
   "keywords": [
