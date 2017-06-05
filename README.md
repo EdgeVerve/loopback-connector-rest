@@ -15,6 +15,49 @@ Standard Rest Connecotr supports adding methods on Dao using templates however i
 ## Rest Model Template 
 Standard methods of rest models like create, update, updateAll, query, all etc. can now use templates only for modifying the request.
 
+## Sample configuration
+
+operations section is to templatize model custom methods, for templatizing inbuild crud methods, you can use templates section.
+
+```
+"evflocalrest": {
+        "connector": "evrest",
+        "debug": "false",
+        "crud" : true,     
+        "name": "evflocalrest",
+        "updateAttributesByIdOnly" : false,
+        "baseURL": "http://localhost:4000/api/",
+        "options": {
+            "headers": {
+                "accept": "application/json",
+                "content-type": "application/json"
+            },
+            "strictSSL": false
+        },
+        "templates": {
+            "create": {
+                "method": "POST",
+                "uri": "http://localhost:4000/rest/bank/{!callContext.ctx.tenantId}/account",
+                "body": "{!body:object}"
+            },
+            "query": {
+                    "method": "GET",
+                    "uri": "http://localhost:4000/rest/bank/{!callContext.ctx.tenantId}/account"
+            }
+        },
+        "operations": [{
+                "template": {
+                    "method": "GET",
+                    "url": "http://localhost:4000/rest/error1"
+                },
+                "functions": {
+                    "error1": []
+                }
+        }
+       ]
+    }
+```
+
 ## Documentation
 
 For complete documentation, see [StrongLoop Documentation | REST Connector](http://docs.strongloop.com/display/LB/REST+connector).
