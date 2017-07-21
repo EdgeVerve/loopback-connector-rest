@@ -15,6 +15,22 @@ Standard Rest Connecotr supports adding methods on Dao using templates however i
 ## Rest Model Template 
 Standard methods of rest models like create, update, updateAll, query, all etc. can now use templates only for modifying the request.
 
+## Support of prototype methods 
+In operations you can define prototype methods like updateAttributes, deleteById etc. These have advantage that this parameter will be pointed to instance, so you can use values like this.id in URL.
+Example.
+```
+{
+				"template": {
+					"method": "PUT",
+					"url": "http://localhost:4000/rest/bank/bank1/{model.modelName}/{this.id}",
+					"body": "{!data:object}"
+				},
+				"functions": {
+					"prototype.updateAttributes": ["data"]
+				}
+```
+
+
 ## Sample configuration
 
 operations section is to templatize model custom methods, for templatizing inbuild crud methods, you can use templates section.
