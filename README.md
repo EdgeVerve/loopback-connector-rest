@@ -2,15 +2,18 @@
 
 LoopBack REST connector allows Node.js application to interact with HTTP REST APIs using a template driven approach.
 
+> ### This project is modification of original [loopback-connector-rest](https://github.com/strongloop/loopback-connector-rest).
+
 ## Installation
 
-npm install loopback-connector-rest
+npm install https://github.com/EdgeVerve/loopback-connector-rest/v1.0.0
+> use latest version
 
 ## Options passed in before and after hooks of connector
-Now EVRest connector supports passing options (CallContext) to before and after hooks. It can be accessed as ctx.options.
+Now OERest connector supports passing options (CallContext) to before and after hooks. It can be accessed as ctx.options.
 
 ## Supporting CRUD operations using template
-Standard Rest Connecotr supports adding methods on Dao using templates however it does not support, templates for crud operations (settings.crud = true). To overcome this, EVRest Connector now supports templates for methods on connector object (not on Dao), so that crud operations also can use template
+Standard Rest Connecotr supports adding methods on Dao using templates however it does not support, templates for crud operations (settings.crud = true). To overcome this, OERest Connector now supports templates for methods on connector object (not on Dao), so that crud operations also can use template
 
 ## Rest Model Template 
 Standard methods of rest models like create, update, updateAll, query, all etc. can now use templates only for modifying the request.
@@ -36,11 +39,11 @@ Example.
 operations section is to templatize model custom methods, for templatizing inbuild crud methods, you can use templates section.
 
 ```
-"evflocalrest": {
-        "connector": "evrest",
+"oelocalrest": {
+        "connector": "loopback-connector-rest",
         "debug": "false",
         "crud" : true,     
-        "name": "evflocalrest",
+        "name": "oelocalrest",
         "updateAttributesByIdOnly" : false,
         "baseURL": "http://localhost:4000/api/",
         "options": {
