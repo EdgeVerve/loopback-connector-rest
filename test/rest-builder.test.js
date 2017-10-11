@@ -12,7 +12,7 @@ if (!global.Promise) {
 var RequestBuilder = require('../lib/rest-builder');
 
 describe('REST Request Builder', function() {
-  describe('Request templating', function() {
+  describe.skip('Request templating', function() {
     var server = null;
     before(function(done) {
       var app = require('./express-helper')();
@@ -218,7 +218,7 @@ describe('REST Request Builder', function() {
     });
   });
 
-  describe('handling of 4XX status codes', function() {
+  describe.skip('handling of 4XX status codes', function() {
     var server = null;
     before(function(done) {
       var app = require('./express-helper')();

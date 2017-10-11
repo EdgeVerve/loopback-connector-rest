@@ -22,7 +22,7 @@ var RestResource = require('../lib/rest-model');
 var rest = new RestResource('Users', 'http://localhost:3000');
 
 describe('REST connector', function() {
-  describe('CRUD methods supported', function() {
+  describe.skip('CRUD methods supported', function() {
     var server = null;
     before(function(done) {
       var app = require('./express-helper')();
