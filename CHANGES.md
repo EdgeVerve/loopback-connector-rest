@@ -1,3 +1,14 @@
+2018-01-03, oe version 1.2.0
+=========================
+* Bug fixes
+
+Previous
+=========
+* support for prototype methods in operations and special parameters in template this and model supported.
+
+
+
+
 2016-03-18, Version 2.0.0
 =========================
 
